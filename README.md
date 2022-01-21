@@ -16,5 +16,5 @@ This example creates an `Elog` instance that will log to a file named **elog.log
 
 ```php
 create_elog();
-elog("Hey, I'm elog.log");
+elog("Hey, I'm elog.log"); // ——> Writes "Hey, I'm elog.log" to {__DIR__}/elog.log
 ```
