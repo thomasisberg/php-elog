@@ -19,7 +19,7 @@ create_elog();
 
 /*
 Logs to the first instance that was created.
-Logs to __DIR__/elog.log
+Logs to "__DIR__/elog.log"
 */
 elog("I am elog.log");
 ```
@@ -105,12 +105,15 @@ Of course you may use the underlying `Elog` class directly. This way you can con
 ```php
 use Tintonic/PhpElog/Elog;
 
-$logger = new Elog('/path/to/log', 'elog', 'elog', 'log');
+/*
+Create an instance named "foo" that logs to "/path/to/log/elog.txt" with data type by default.
+*/
+$logger = new Elog('/path/to/log', 'foo', 'elog', 'txt')->set_default_include_type(true);
 
-$logger->set_default_include_type(true);
-
-
-$logger->log(123);
+/*
+Log to named instance somewhere else in the application.
+*/
+Elog::logn('foo', 123, 'What?');
 
 /*
 {integer} 
@@ -118,11 +121,11 @@ $logger->log(123);
 */
 
 
-$logger->log('foo bar', 'What?');
+$logger->logn('foo' 'bar', 'Foo?');
 
 /*
---- What? {string} ---
-foo bar
+--- Foo? {string} ---
+bar
 */
 
 ```

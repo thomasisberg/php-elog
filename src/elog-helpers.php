@@ -16,7 +16,7 @@ function create_elog(String $directory_path = __DIR__, String $name = 'elog', St
 | Default usage logs to the first Elog instance that
 | was created.
 |---------------------------------------------------------- */
-function elog (String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
+function elog ($data, String $label = null, Bool $include_type = null)
 {
     Elog::get_instance_at(0)->log($data, $label, $include_type);
 }
@@ -24,12 +24,12 @@ function elog (String|Bool|Array|Object $data, String $label = null, Bool $inclu
 /* -----------------------------------------------------------
 | Helpers to log to named Elog instance.
 |---------------------------------------------------------- */
-function elogn (String $name, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
+function elogn (String $name, $data, String $label = null, Bool $include_type = null)
 {
     Elog::get_named_instance($name)->log($data, $label, $include_type);
 }
 
-function elognamed (String $name, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
+function elognamed (String $name, $data, String $label = null, Bool $include_type = null)
 {
     elogn($name, $data, $label, $include_type);
 }
@@ -37,7 +37,7 @@ function elognamed (String $name, String|Bool|Array|Object $data, String $label 
 /* -----------------------------------------------------------
 | Helper to log to Elog instance at specific index.
 |---------------------------------------------------------- */
-function elogat (Int $index, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
+function elogat (Int $index, $data, String $label = null, Bool $include_type = null)
 {
     Elog::get_instance_at($index)->log($data, $label, $include_type);
 }

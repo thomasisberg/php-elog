@@ -64,8 +64,6 @@ class Elog {
             $data_out = $data;
         }
 
-        $label_out = $label ? "--- $label ---\n" : '';
-
         /* -----------------------------------------------------------
         | Set default value for $include_type.
         |---------------------------------------------------------- */
@@ -73,9 +71,14 @@ class Elog {
             $include_type = $this->default_include_type;
         }
 
-        $type_out = $include_type ? '{' . gettype($data) . '} ' . "\n" : '';
+        $type_out = $include_type ? '{' . gettype($data) . '}' : '';
 
-        $out = $label_out . $type_out . $data_out;
+        /* -----------------------------------------------------------
+        | Label.
+        |---------------------------------------------------------- */
+        $label_out = $label ? "--- $label $type_out ---\n" : '';
+
+        $out = $label_out . ($label ? '' : $type_out . "\n") . $data_out;
         
         /* -----------------------------------------------------------
         | Log message.
@@ -110,6 +113,8 @@ class Elog {
     public function set_default_include_type (Bool $default_include_type)
     {
         $this->default_include_type = $default_include_type;
+
+        return $this;
     }
 
     /* -----------------------------------------------------------
@@ -119,6 +124,8 @@ class Elog {
     public function set_name (String $name)
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /* -----------------------------------------------------------
@@ -150,6 +157,22 @@ class Elog {
         }
 
         return self::$INSTANCES[$index];
+    }
+
+    /* -----------------------------------------------------------
+    | Log to named instance.
+    |---------------------------------------------------------- */
+    public static function logn (String $name, $data, String $label = null, Bool $include_type = null)
+    {
+        self::get_named_instance($name)->log($data, $label, $include_type);
+    }
+
+    /* -----------------------------------------------------------
+    | Log to instance at specific index.
+    |---------------------------------------------------------- */
+    public static function logat (Int $index, $data, String $label = null, Bool $include_type = null)
+    {
+        self::get_instance_at($index)->log($data, $label, $include_type);
     }
 }
 
