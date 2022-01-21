@@ -16,7 +16,7 @@ This example creates an `Elog` instance that will log to a file named `elog.log`
 
 ```php
 create_elog();
-elog("I am elog.log");  //  ——> {__DIR__}/elog.log
+elog("I am elog.log");  //  ———> __DIR__/elog.log
 ```
 
 ### Named instances
@@ -28,8 +28,8 @@ create_elog(__DIR__, 'first');
 create_elog('/path/to/log', 'second', 'second_log_file', null);
 
 // Log to named instances using elogn().
-elogn('first', "I am first.log");
-elogn('second', "I am second_log_file"); //  ——> /path/to/log/second_log_file
+elogn('first', "I am first.log");         //  ———>  __DIR__/first.log
+elogn('second', "I am second_log_file");  //  ———>  /path/to/log/second_log_file
 ```
 
 ###
