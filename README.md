@@ -123,7 +123,7 @@ Elog::logn('foo', 123, 'What?');
 */
 
 
-$logger->logn('foo' 'bar', 'Foo?');
+Elog::logn('foo' 'bar', 'Foo?');
 
 /*
 --- Foo? {string} ---
