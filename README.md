@@ -107,6 +107,7 @@ Of course you may use the underlying `Elog` class directly. This way you can cof
 use Tintonic/PhpElog/Elog;
 
 $logger = new Elog('/path/to/log', 'elog', 'elog', 'log');
+
 $logger->set_default_include_type(true);
 
 
