@@ -102,7 +102,7 @@ elogn('second', "I am second_log_file");  //  ———>  /path/to/log/second_lo
 
 Of course you may use the `Elog` class directly.
 
-This example also demonstrates how you can configure a default value for `$include_type` to always log data type.
+This example also demonstrates how you can configure a default value for `$include_type` to always include the data type in the output.
 
 ```php
 use Tintonic/PhpElog/Elog;
