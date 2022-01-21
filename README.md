@@ -16,6 +16,8 @@ This example creates an `Elog` instance that will log to a file named `elog.log`
 
 ```php
 create_elog();
+
+// Log to default (first) instance using elog().
 elog("I am elog.log");  //  ———> __DIR__/elog.log
 ```
 
