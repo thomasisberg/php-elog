@@ -34,36 +34,36 @@ elog("I am elog.log");
 create_elog();
 
 elog(null);
-// [null]
+//  [null]
 
 elog('');
-// [empty string]
+//  [empty string]
 
 elog(true);
-// [true]
+//  [true]
 
 elog(false);
-// [false]
+//  [false]
 
 elog((object) [
     'id' => 123,
     'foo' => 'bar'
 ]);
-// stdClass Object
-// (
-//     [id] => 123
-//     [foo] => bar
-// )
+//  stdClass Object
+//  (
+//      [id] => 123
+//      [foo] => bar
+//  )
 
 elog([
     'id' => 123,
     'foo' => 'bar'
 ]);
-// Array
-// (
-//     [id] => 123
-//     [foo] => bar
-// )
+//  Array
+//  (
+//      [id] => 123
+//      [foo] => bar
+//  )
 ```
 
 
