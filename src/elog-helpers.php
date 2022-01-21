@@ -13,7 +13,7 @@ if (empty(array_filter(array_map('function_exists', [
     'elogat'
 ]))))
 {
-    function create_elog(String $directory_path = __DIR__, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
+    function create_elog(String $directory_path = null, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
     {
         return new Elog($directory_path, $name, $file_name, $file_extension);
     }

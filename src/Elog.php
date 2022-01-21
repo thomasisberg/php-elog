@@ -20,8 +20,13 @@ class Elog {
     | Create instance with path to log file.
     | Log file will be created if missing.
     |---------------------------------------------------------- */
-    function __construct (String $directory_path = __DIR__, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
+    function __construct (String $directory_path = null, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
     {
+        if (!$directory_path) {
+            $backtrace = debug_backtrace();
+            $directory_path = dirname($backtrace[count($backtrace) - 1]['file']);
+        }
+
         $this->name = $name;
 
         if (!$file_name) {
