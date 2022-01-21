@@ -20,7 +20,7 @@ class Elog {
     | Create instance with path to log file.
     | Log file will be created if missing.
     |---------------------------------------------------------- */
-    function __construct ($directory_path = __DIR__, $file_name = 'elog.log', $directory_parent_levels = 0)
+    function __construct ($directory_path = __DIR__, $directory_parent_levels = 0, $file_name = 'elog.log')
     {
         if ($directory_parent_levels) {
             $directory_path = dirname($directory_path, $directory_parent_levels);

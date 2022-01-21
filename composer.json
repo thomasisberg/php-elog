@@ -1,0 +1,21 @@
+{
+    "name": "tintonic/php-elog",
+    "description": "Simple PHP class for enhanced error logging",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tintonic\\PhpElog\\": "src/"
+        },
+        "files": [
+            "src/elog-helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Thomas Isberg",
+            "email": "thomas@tintonic.com"
+        }
+    ],
+    "require": {}
+}
