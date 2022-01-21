@@ -119,9 +119,10 @@ $logger->log(123);
 */
 
 
-$logger->log('foo bar');
+$logger->log('foo bar', 'What?');
 
 /*
+--- What? ---
 {string} 
 foo bar
 */
