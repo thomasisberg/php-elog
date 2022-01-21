@@ -35,17 +35,13 @@ elog("I am elog.log");
 ```php
 create_elog();
 
-elog(null);
-// [null]
+elog(null);  // [null]
 
-elog('');
-// [empty string]
+elog('');    // [empty string]
 
-elog(true);
-// [true]
+elog(true);  // [true]
 
-elog(false);
-// [false]
+elog(false); // [false]
 
 elog((object) [
     'id' => 123,
