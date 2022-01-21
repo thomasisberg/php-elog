@@ -30,7 +30,7 @@ elog("I am elog.log");
 * `empty string` is presented as `[empty string]`
 * `true` is presented as `[true]`
 * `false` is presented as `[false]`
-* `object` and `arrays` is presented using `print_r()`
+* `object` and `array` is described using `print_r()`
 
 ```php
 create_elog();
