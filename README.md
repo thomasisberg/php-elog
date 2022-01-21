@@ -17,8 +17,10 @@ This example creates an `Elog` instance that will log to a file named `elog.log`
 ```php
 create_elog();
 
-// Logs to the first instance that was created.
-// Logs to __DIR__/elog.log
+/*
+Logs to the first instance that was created.
+Logs to __DIR__/elog.log
+*/
 elog("I am elog.log");
 ```
 
@@ -34,16 +36,16 @@ elog("I am elog.log");
 create_elog();
 
 elog(null);
-//  [null]
+// [null]
 
 elog('');
-//  [empty string]
+// [empty string]
 
 elog(true);
-//  [true]
+// [true]
 
 elog(false);
-//  [false]
+// [false]
 
 elog((object) [
     'id' => 123,
