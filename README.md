@@ -49,21 +49,25 @@ elog((object) [
     'id' => 123,
     'foo' => 'bar'
 ]);
-//  stdClass Object
-//  (
-//      [id] => 123
-//      [foo] => bar
-//  )
+/*
+stdClass Object
+(
+    [id] => 123
+    [foo] => bar
+)
+*/
 
 elog([
     'id' => 123,
     'foo' => 'bar'
 ]);
-//  Array
-//  (
-//      [id] => 123
-//      [foo] => bar
-//  )
+/*
+Array
+(
+    [id] => 123
+    [foo] => bar
+)
+*/
 ```
 
 
