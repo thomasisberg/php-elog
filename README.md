@@ -108,14 +108,14 @@ This example also demonstrates how you can configure a default value for `$inclu
 use Tintonic/PhpElog/Elog;
 
 /*
-Create an instance named "foo" that logs to "/path/to/log/elog.txt" with data type by default.
+Create an instance named "notes" that logs to "/path/to/log/elog.txt" with data type by default.
 */
-$logger = new Elog('/path/to/log', 'foo', 'elog', 'txt')->set_default_include_type(true);
+$logger = new Elog('/path/to/log', 'notes', 'elog', 'txt')->set_default_include_type(true);
 
 /*
 Log to named instance somewhere else in the application.
 */
-Elog::logn('foo', 123, 'What?');
+Elog::logn('notes', 123, 'What?');
 
 /*
 {integer} 
@@ -123,7 +123,7 @@ Elog::logn('foo', 123, 'What?');
 */
 
 
-Elog::logn('foo' 'bar', 'Foo?');
+Elog::logn('notes' 'bar', 'Foo?');
 
 /*
 --- Foo? {string} ---
