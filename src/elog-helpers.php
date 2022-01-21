@@ -13,7 +13,7 @@ if (function_exists('elog')) {
 |---------------------------------------------------------- */
 function elog (String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
 {
-    Elog::getInstanceAt(0)->log($data, $label, $include_type);
+    Elog::get_instance_at(0)->log($data, $label, $include_type);
 }
 
 /* -----------------------------------------------------------
@@ -21,7 +21,7 @@ function elog (String|Bool|Array|Object $data, String $label = null, Bool $inclu
 |---------------------------------------------------------- */
 function elogn (String $name, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
 {
-    Elog::getNamedInstance($name)->log($data, $label, $include_type);
+    Elog::get_named_instance($name)->log($data, $label, $include_type);
 }
 
 function elognamed (String $name, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
@@ -34,5 +34,5 @@ function elognamed (String $name, String|Bool|Array|Object $data, String $label 
 |---------------------------------------------------------- */
 function elogat (Int $index, String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
 {
-    Elog::getInstanceAt($index)->log($data, $label, $include_type);
+    Elog::get_instance_at($index)->log($data, $label, $include_type);
 }

@@ -11,22 +11,24 @@ class Elog {
     public static $ALL_DISABLED = false;
     public static $INSTANCES = [];
 
+    public $name;
     public $file_path;
     public $enabled = true;
     public $default_include_type = false;
-    public $name;
 
     /* -----------------------------------------------------------
     | Create instance with path to log file.
     | Log file will be created if missing.
     |---------------------------------------------------------- */
-    function __construct ($directory_path = __DIR__, $directory_parent_levels = 0, $file_name = 'elog.log')
+    function __construct (String $directory_path = __DIR__, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
     {
-        if ($directory_parent_levels) {
-            $directory_path = dirname($directory_path, $directory_parent_levels);
+        $this->name = $name;
+
+        if (!$file_name) {
+            $file_name = $name;
         }
 
-        $this->file_path = $directory_path . '/' . $file_name;
+        $this->file_path = $directory_path . '/' . $file_name . ($file_extension ? ".$file_extension" : '');
 
         /* -----------------------------------------------------------
         | Register instance for access from helper method.
@@ -122,7 +124,7 @@ class Elog {
     /* -----------------------------------------------------------
     | Get instance by name.
     |---------------------------------------------------------- */
-    public static function getNamedInstance ($name)
+    public static function get_named_instance ($name)
     {
         if (!$name || !is_string($name)) {
             throw new ElogException("No valid name provided.");
@@ -139,7 +141,7 @@ class Elog {
         return $matching_instances[0];
     }
 
-    public static function getInstanceAt (Int $index = 0)
+    public static function get_instance_at (Int $index = 0)
     {
         $count = count(self::$INSTANCES);
 
