@@ -79,8 +79,7 @@ Array
 elog(true, 'Current value', true);
 
 /*
---- Current value ---
-{boolean} 
+--- Current value {boolean} ---
 [true]
 */
 ```
@@ -122,8 +121,7 @@ $logger->log(123);
 $logger->log('foo bar', 'What?');
 
 /*
---- What? ---
-{string} 
+--- What? {string} ---
 foo bar
 */
 
