@@ -73,6 +73,19 @@ Array
 ```
 
 
+### Include label and / or data type
+
+```php
+elog(true, 'My number', true);
+
+/*
+--- My number ---
+{boolean} 
+[true]
+*/
+```
+
+
 ### Named instances
 
 This example creates two named `Elog` instances – one that logs to `_DIR__/first.log` and another that logs to `/path/to/log/second_log_file` (without file extension).

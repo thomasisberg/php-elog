@@ -39,7 +39,7 @@ class Elog {
     /* -----------------------------------------------------------
     | Log data.
     |---------------------------------------------------------- */
-    public function log (String|Bool|Array|Object $data, String $label = null, Bool $include_type = null)
+    public function log ($data, String $label = null, Bool $include_type = null)
     {
         /* -----------------------------------------------------------
         | Bail out if globally or locally disabled.
@@ -64,7 +64,7 @@ class Elog {
             $data_out = $data;
         }
 
-        $label_out = $label ? "--- $label: ---\n" : '';
+        $label_out = $label ? "--- $label ---\n" : '';
 
         /* -----------------------------------------------------------
         | Set default value for $include_type.
@@ -73,7 +73,7 @@ class Elog {
             $include_type = $this->default_include_type;
         }
 
-        $type_out = $include_type ? '{ ' . gettype($data) . ' } ' . "\n" : '';
+        $type_out = $include_type ? '{' . gettype($data) . '} ' . "\n" : '';
 
         $out = $label_out . $type_out . $data_out;
         
