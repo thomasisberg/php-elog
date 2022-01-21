@@ -17,6 +17,5 @@
             "email": "thomas@tintonic.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {}
 }
