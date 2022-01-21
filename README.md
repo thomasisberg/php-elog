@@ -110,8 +110,8 @@ use Tintonic/PhpElog/Elog;
 /*
 Create an instance named "notes" that logs to "/path/to/log/elog.txt" with data type by default.
 */
-new Elog('/path/to/log', 'notes', 'elog', 'txt')
-    ->set_default_include_type(true);
+$logger = new Elog('/path/to/log', 'notes', 'elog', 'txt');
+$logger->set_default_include_type(true);
 
 /*
 Log to named instance somewhere else in the application.
