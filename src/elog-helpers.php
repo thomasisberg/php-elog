@@ -6,6 +6,11 @@ if (function_exists('elog')) {
     exit;
 }
 
+function create_elog(String $directory_path = __DIR__, String $name = 'elog', String $file_name = null, String $file_extension = 'log')
+{
+    return new Elog($directory_path, $name, $file_name, $file_extension);
+}
+
 /* -----------------------------------------------------------
 | Helper function for easer access to logging with Elog.
 | Default usage logs to the first Elog instance that
