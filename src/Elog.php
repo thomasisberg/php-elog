@@ -1,6 +1,6 @@
 <?php
 
-namespace Tintonic;
+namespace Tintonic\PhpElog;
 
 use Exception;
 
