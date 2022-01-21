@@ -16,7 +16,7 @@ This example creates an `Elog` instance that will log to a file named `elog.log`
 
 ```php
 create_elog();
-elog("Hey, I'm elog.log"); // "Hey, I'm elog.log" in {__DIR__}/elog.log
+elog("Hey, I'm elog.log");  //  ——> {__DIR__}/elog.log
 ```
 
 ### Multiple instances.
@@ -25,5 +25,8 @@ This example creates two `Elog` instances – one that logs to `first.log` and a
 
 ```php
 create_elog(__DIR__, 'first');
-create_elog(__DIR__, 'second', 'second_log_file', null);
+create_elog('/path/to/log', 'second', 'second_log_file', null);
+
+elog("Hey, I'm first.log");       //  ——> {__DIR__}/first.log
+elog("Hey, I'm second_log_file"); //  ——> /path/to/log/second_log_file
 ```
