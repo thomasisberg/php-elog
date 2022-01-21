@@ -23,7 +23,7 @@ elog("I am elog.log");  //  ———> __DIR__/elog.log
 
 ### Named instances
 
-This example creates two `Elog` instances – one that logs to `first.log` and another that logs to `second_log_file` (without file extension).
+This example creates two `Elog` instances – one that logs to `_DIR__/first.log` and another that logs to `/path/to/log/second_log_file` (without file extension).
 
 ```php
 create_elog(__DIR__, 'first');
