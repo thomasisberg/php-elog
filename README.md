@@ -43,10 +43,12 @@ elog(true);  // [true]
 
 elog(false); // [false]
 
+
 elog((object) [
     'id' => 123,
     'foo' => 'bar'
 ]);
+
 /*
 stdClass Object
 (
@@ -55,10 +57,12 @@ stdClass Object
 )
 */
 
+
 elog([
     'id' => 123,
     'foo' => 'bar'
 ]);
+
 /*
 Array
 (
