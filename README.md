@@ -116,7 +116,7 @@ $logger->set_default_include_type(true);
 /*
 Log to named instance somewhere else in the application.
 */
-Elog::logn('notes', 123, 'What?');
+Elog::logn('notes', 123);
 
 /*
 {integer} 
