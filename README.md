@@ -76,11 +76,11 @@ Array
 ### Include label and / or data type
 
 ```php
-elog(true, 'Current value', true);
+elog(123, 'Current value', true);
 
 /*
---- Current value {boolean} ---
-[true]
+--- Current value {integer} ---
+123
 */
 ```
 
