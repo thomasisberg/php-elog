@@ -1,6 +1,6 @@
 # php-elog
 
-Simple PHP class for enhanced error logging.
+Simple PHP solution for enhanced logging.
 
 ## Installation
 
